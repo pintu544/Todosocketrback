@@ -14,7 +14,7 @@ const todoController = require("./app/controllers/task.controller");
 const app = express();
 
 const server = http.createServer(app);
-const io = socketio(server, { cors: { origin: "*" } });
+const io = socketio(server, { cors: { origin: "https://todosocketrbac.netlify.app" } });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger("dev"));
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:3000"],
+  origin: ["https://todosocketrbac.netlify.app"],
 };
 
 app.use(cors(corsOptions));
